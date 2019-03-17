@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D3A5FE0-B57C-428B-A534-AAEA876FCCD4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>monaghese</RootNamespace>
+    <AssemblyName>monaghese</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="RibbonControlsLibrary, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="EDM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="paneladmin.xaml.cs">
+      <DependentUpon>paneladmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="panelkarfarma.xaml.cs">
+      <DependentUpon>panelkarfarma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="panelpeimankar.xaml.cs">
+      <DependentUpon>panelpeimankar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sabtkarfarma.xaml.cs">
+      <DependentUpon>Sabtkarfarma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sabtpeimankar.xaml.cs">
+      <DependentUpon>sabtpeimankar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Table_modir.cs">
+      <DependentUpon>EDM.tt</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="paneladmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="panelkarfarma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="panelpeimankar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sabtkarfarma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="sabtpeimankar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="EDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EDM.edmx.diagram">
+      <DependentUpon>EDM.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\128\app.png" />
+    <Resource Include="img\128\audio_cd.png" />
+    <Resource Include="img\128\back.png" />
+    <Resource Include="img\128\ball_cyan.png" />
+    <Resource Include="img\128\book.png" />
+    <Resource Include="img\128\book_open.png" />
+    <Resource Include="img\128\browse.png" />
+    <Resource Include="img\128\calculator.png" />
+    <Resource Include="img\128\calendar.png" />
+    <Resource Include="img\128\camera.png" />
+    <Resource Include="img\128\cancel.png" />
+    <Resource Include="img\128\cd.png" />
+    <Resource Include="img\128\cd_music.png" />
+    <Resource Include="img\128\cent.png" />
+    <Resource Include="img\128\clock.png" />
+    <Resource Include="img\128\close.png" />
+    <Resource Include="img\128\computer.png" />
+    <Resource Include="img\128\computer2.png" />
+    <Resource Include="img\128\computer_off.png" />
+    <Resource Include="img\128\computer_search.png" />
+    <Resource Include="img\128\convert_audio.png" />
+    <Resource Include="img\128\copy.png" />
+    <Resource Include="img\128\cross.png" />
+    <Resource Include="img\128\cut.png" />
+    <Resource Include="img\128\desktop.png" />
+    <Resource Include="img\128\doc_add.png" />
+    <Resource Include="img\128\doc_app.png" />
+    <Resource Include="img\128\doc_clock.png" />
+    <Resource Include="img\128\doc_edit.png" />
+    <Resource Include="img\128\doc_new.png" />
+    <Resource Include="img\128\doc_new2.png" />
+    <Resource Include="img\128\doc_remove.png" />
+    <Resource Include="img\128\doc_web.png" />
+    <Resource Include="img\128\dollar.png" />
+    <Resource Include="img\128\doors.png" />
+    <Resource Include="img\128\down.png" />
+    <Resource Include="img\128\down2.png" />
+    <Resource Include="img\128\download.png" />
+    <Resource Include="img\128\dvd.png" />
+    <Resource Include="img\128\email.png" />
+    <Resource Include="img\128\email_open.png" />
+    <Resource Include="img\128\exit.png" />
+    <Resource Include="img\128\extract_audio.png" />
+    <Resource Include="img\128\fast_forward.png" />
+    <Resource Include="img\128\favorites.png" />
+    <Resource Include="img\128\folder.png" />
+    <Resource Include="img\128\folder_edit.png" />
+    <Resource Include="img\128\folder_font.png" />
+    <Resource Include="img\128\folder_in.png" />
+    <Resource Include="img\128\folder_music.png" />
+    <Resource Include="img\128\folder_out.png" />
+    <Resource Include="img\128\font.png" />
+    <Resource Include="img\128\forward.png" />
+    <Resource Include="img\128\funnel.png" />
+    <Resource Include="img\128\handsaw.png" />
+    <Resource Include="img\128\harddisc.png" />
+    <Resource Include="img\128\harddisc2.png" />
+    <Resource Include="img\128\help.png" />
+    <Resource Include="img\128\help_online.png" />
+    <Resource Include="img\128\hom.png" />
+    <Resource Include="img\128\home.png" />
+    <Resource Include="img\128\import_digital.png" />
+    <Resource Include="img\128\info.png" />
+    <Resource Include="img\128\key.png" />
+    <Resource Include="img\128\left.png" />
+    <Resource Include="img\128\left_right.png" />
+    <Resource Include="img\128\library.png" />
+    <Resource Include="img\128\lock.png" />
+    <Resource Include="img\128\minus.png" />
+    <Resource Include="img\128\minus2.png" />
+    <Resource Include="img\128\music.png" />
+    <Resource Include="img\128\network.png" />
+    <Resource Include="img\128\ok.png" />
+    <Resource Include="img\128\ok2.png" />
+    <Resource Include="img\128\options.png" />
+    <Resource Include="img\128\paste.png" />
+    <Resource Include="img\128\pause.png" />
+    <Resource Include="img\128\pen.png" />
+    <Resource Include="img\128\pen2.png" />
+    <Resource Include="img\128\phone.png" />
+    <Resource Include="img\128\picture.png" />
+    <Resource Include="img\128\picture_preview.png" />
+    <Resource Include="img\128\pig.png" />
+    <Resource Include="img\128\play.png" />
+    <Resource Include="img\128\plus.png" />
+    <Resource Include="img\128\plus2.png" />
+    <Resource Include="img\128\printer.png" />
+    <Resource Include="img\128\print_preview.png" />
+    <Resource Include="img\128\rect_cyan.png" />
+    <Resource Include="img\128\recycle.png" />
+    <Resource Include="img\128\recycle_full.png" />
+    <Resource Include="img\128\redo.png" />
+    <Resource Include="img\128\refresh.png" />
+    <Resource Include="img\128\rewind.png" />
+    <Resource Include="img\128\right.png" />
+    <Resource Include="img\128\save.png" />
+    <Resource Include="img\128\scaner.png" />
+    <Resource Include="img\128\scroll.png" />
+    <Resource Include="img\128\search.png" />
+    <Resource Include="img\128\skip_backward.png" />
+    <Resource Include="img\128\skip_forward.png" />
+    <Resource Include="img\128\smile.png" />
+    <Resource Include="img\128\sound.png" />
+    <Resource Include="img\128\sql.png" />
+    <Resource Include="img\128\star.png" />
+    <Resource Include="img\128\stat.png" />
+    <Resource Include="img\128\stop.png" />
+    <Resource Include="img\128\support.png" />
+    <Resource Include="img\128\table.png" />
+    <Resource Include="img\128\thunderbolt.png" />
+    <Resource Include="img\128\timer.png" />
+    <Resource Include="img\128\tools.png" />
+    <Resource Include="img\128\triang_cyan.png" />
+    <Resource Include="img\128\undo.png" />
+    <Resource Include="img\128\unlock.png" />
+    <Resource Include="img\128\up.png" />
+    <Resource Include="img\128\up2.png" />
+    <Resource Include="img\128\upload.png" />
+    <Resource Include="img\128\up_down.png" />
+    <Resource Include="img\128\user.png" />
+    <Resource Include="img\128\user2.png" />
+    <Resource Include="img\128\user3.png" />
+    <Resource Include="img\128\users.png" />
+    <Resource Include="img\128\user_search.png" />
+    <Resource Include="img\128\warning.png" />
+    <Resource Include="img\128\web.png" />
+    <Resource Include="img\128\web_search.png" />
+    <Resource Include="img\128\window.png" />
+    <Resource Include="img\128\winlogo.png" />
+    <Resource Include="img\128\xml.png" />
+    <Resource Include="img\128\zoom.png" />
+    <Resource Include="img\128\zoom_in.png" />
+    <Resource Include="img\128\zoom_out.png" />
+    <Resource Include="img\48\app.png" />
+    <Resource Include="img\48\audio_cd.png" />
+    <Resource Include="img\48\back.png" />
+    <Resource Include="img\48\ball_cyan.png" />
+    <Resource Include="img\48\book.png" />
+    <Resource Include="img\48\book_open.png" />
+    <Resource Include="img\48\browse.png" />
+    <Resource Include="img\48\calculator.png" />
+    <Resource Include="img\48\calendar.png" />
+    <Resource Include="img\48\camera.png" />
+    <Resource Include="img\48\cancel.png" />
+    <Resource Include="img\48\cd.png" />
+    <Resource Include="img\48\cd_music.png" />
+    <Resource Include="img\48\cent.png" />
+    <Resource Include="img\48\clock.png" />
+    <Resource Include="img\48\close.png" />
+    <Resource Include="img\48\computer.png" />
+    <Resource Include="img\48\computer2.png" />
+    <Resource Include="img\48\computer_off.png" />
+    <Resource Include="img\48\computer_search.png" />
+    <Resource Include="img\48\convert_audio.png" />
+    <Resource Include="img\48\copy.png" />
+    <Resource Include="img\48\cross.png" />
+    <Resource Include="img\48\cut.png" />
+    <Resource Include="img\48\desktop.png" />
+    <Resource Include="img\48\doc_add.png" />
+    <Resource Include="img\48\doc_app.png" />
+    <Resource Include="img\48\doc_clock.png" />
+    <Resource Include="img\48\doc_edit.png" />
+    <Resource Include="img\48\doc_new.png" />
+    <Resource Include="img\48\doc_new2.png" />
+    <Resource Include="img\48\doc_remove.png" />
+    <Resource Include="img\48\doc_web.png" />
+    <Resource Include="img\48\dollar.png" />
+    <Resource Include="img\48\doors.png" />
+    <Resource Include="img\48\down.png" />
+    <Resource Include="img\48\down2.png" />
+    <Resource Include="img\48\download.png" />
+    <Resource Include="img\48\dvd.png" />
+    <Resource Include="img\48\email.png" />
+    <Resource Include="img\48\email_open.png" />
+    <Resource Include="img\48\exit.png" />
+    <Resource Include="img\48\extract_audio.png" />
+    <Resource Include="img\48\fast_forward.png" />
+    <Resource Include="img\48\favorites.png" />
+    <Resource Include="img\48\folder.png" />
+    <Resource Include="img\48\folder_edit.png" />
+    <Resource Include="img\48\folder_font.png" />
+    <Resource Include="img\48\folder_in.png" />
+    <Resource Include="img\48\folder_music.png" />
+    <Resource Include="img\48\folder_out.png" />
+    <Resource Include="img\48\font.png" />
+    <Resource Include="img\48\forward.png" />
+    <Resource Include="img\48\funnel.png" />
+    <Resource Include="img\48\handsaw.png" />
+    <Resource Include="img\48\harddisc.png" />
+    <Resource Include="img\48\harddisc2.png" />
+    <Resource Include="img\48\help.png" />
+    <Resource Include="img\48\help_online.png" />
+    <Resource Include="img\48\hom.png" />
+    <Resource Include="img\48\home.png" />
+    <Resource Include="img\48\import_digital.png" />
+    <Resource Include="img\48\info.png" />
+    <Resource Include="img\48\key.png" />
+    <Resource Include="img\48\left.png" />
+    <Resource Include="img\48\left_right.png" />
+    <Resource Include="img\48\library.png" />
+    <Resource Include="img\48\lock.png" />
+    <Resource Include="img\48\minus.png" />
+    <Resource Include="img\48\minus2.png" />
+    <Resource Include="img\48\music.png" />
+    <Resource Include="img\48\network.png" />
+    <Resource Include="img\48\ok.png" />
+    <Resource Include="img\48\ok2.png" />
+    <Resource Include="img\48\options.png" />
+    <Resource Include="img\48\paste.png" />
+    <Resource Include="img\48\pause.png" />
+    <Resource Include="img\48\pen.png" />
+    <Resource Include="img\48\pen2.png" />
+    <Resource Include="img\48\phone.png" />
+    <Resource Include="img\48\picture.png" />
+    <Resource Include="img\48\picture_preview.png" />
+    <Resource Include="img\48\pig.png" />
+    <Resource Include="img\48\play.png" />
+    <Resource Include="img\48\plus.png" />
+    <Resource Include="img\48\plus2.png" />
+    <Resource Include="img\48\printer.png" />
+    <Resource Include="img\48\print_preview.png" />
+    <Resource Include="img\48\rect_cyan.png" />
+    <Resource Include="img\48\recycle.png" />
+    <Resource Include="img\48\recycle_full.png" />
+    <Resource Include="img\48\redo.png" />
+    <Resource Include="img\48\refresh.png" />
+    <Resource Include="img\48\rewind.png" />
+    <Resource Include="img\48\right.png" />
+    <Resource Include="img\48\save.png" />
+    <Resource Include="img\48\scaner.png" />
+    <Resource Include="img\48\scroll.png" />
+    <Resource Include="img\48\search.png" />
+    <Resource Include="img\48\skip_backward.png" />
+    <Resource Include="img\48\skip_forward.png" />
+    <Resource Include="img\48\smile.png" />
+    <Resource Include="img\48\sound.png" />
+    <Resource Include="img\48\sql.png" />
+    <Resource Include="img\48\star.png" />
+    <Resource Include="img\48\stat.png" />
+    <Resource Include="img\48\stop.png" />
+    <Resource Include="img\48\support.png" />
+    <Resource Include="img\48\table.png" />
+    <Resource Include="img\48\thunderbolt.png" />
+    <Resource Include="img\48\timer.png" />
+    <Resource Include="img\48\tools.png" />
+    <Resource Include="img\48\triang_cyan.png" />
+    <Resource Include="img\48\undo.png" />
+    <Resource Include="img\48\unlock.png" />
+    <Resource Include="img\48\up.png" />
+    <Resource Include="img\48\up2.png" />
+    <Resource Include="img\48\upload.png" />
+    <Resource Include="img\48\up_down.png" />
+    <Resource Include="img\48\user.png" />
+    <Resource Include="img\48\user2.png" />
+    <Resource Include="img\48\user3.png" />
+    <Resource Include="img\48\users.png" />
+    <Resource Include="img\48\user_search.png" />
+    <Resource Include="img\48\warning.png" />
+    <Resource Include="img\48\web.png" />
+    <Resource Include="img\48\web_search.png" />
+    <Resource Include="img\48\window.png" />
+    <Resource Include="img\48\winlogo.png" />
+    <Resource Include="img\48\xml.png" />
+    <Resource Include="img\48\zoom.png" />
+    <Resource Include="img\48\zoom_in.png" />
+    <Resource Include="img\48\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\employer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\aa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\bb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EDM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EDM.Context.cs</LastGenOutput>
+      <DependentUpon>EDM.edmx</DependentUpon>
+    </Content>
+    <Content Include="EDM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDM.edmx</DependentUpon>
+      <LastGenOutput>EDM.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
